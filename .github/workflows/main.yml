@@ -1,0 +1,24 @@
+name: My First CI/CD Pipeline
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  
+
+    steps:
+     
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+   
+      - name: Run Basic Tests
+        run: |
+          echo "Starting tests..."
+          echo "Checking HTML file..."
+          ls index.html
+          echo "Test Passed: Index file exists!"
+
+    
+      - name: Deploy to Server
+        run: echo "Deploying website to production server... SUCCESS!"
